@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AnaProje.master.cs" Inherits="YapiDenetimProje.AnaProje" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Elektirk Proje Kontrol</title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="Dosyalar1/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Our Custom CSS -->
+    <link href="Dosyalar1/StyleSheet1.css" rel="stylesheet" />
+    <%--<link href="Dosyalar1/StyleSheet2.css" rel="stylesheet" />--%>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Elektirk Proje Kontrol</h3>
+                <h5>E2M</h5>
+                <strong>BS</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Projeler
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="Default.aspx">Proje Listele</a></li>
+                        <li><a href="ProjeEkle.aspx">Proje Ekle</a></li>
+                        <%--  <li><a href="ProjeBul.aspx">Proje Bul</a></li>--%>
+                    </ul>
+                </li>
+                 <li>
+                    <a href="SilinenProjeler.aspx">
+                        <i class="glyphicon glyphicon-file"></i>
+                     Silinen Projeler
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                      Çıkış Yap
+                    </a>
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery CDN -->
+    <script src="Dosyalar1/jquery-1.12.0.min.js"></script>
+
+    <!-- Bootstrap Js CDN -->
+    <script src="Dosyalar1/js-bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
