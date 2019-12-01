@@ -1,0 +1,22 @@
+﻿@model StokProje.Models.Entity.TBL_KATEGORILER
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @*<div>
+            <label for="Kategori">Kategori Adı</label>
+            <input type="text" class="form-control" id="Kategori" placeholder="Kategori adını giriniz" name="KATEGORIAD" required>
+        </div>*@
+    <div>
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.KATEGORIAD, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+
+</form>
+

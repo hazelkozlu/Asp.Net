@@ -1,0 +1,40 @@
+﻿@model StokProje.Models.Entity.TBL_SATISLAR
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn-primary" data-toggle="modal" data-target="#Modal1">
+    Satış Yap
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Satış Yapma Ekranı</h3>
+            </div>
+            <form method="post" action="/Satis/YeniSatis">
+                <div class="modal-body">
+                    <label>Ürün Adı</label>
+                    @Html.TextBoxFor(m => m.URUN, new { @class = "form-control", @required="true"})
+                    @Html.ValidationMessageFor(m => m.URUN, "", new { @style = "color:red" })
+                    <br />
+                    <label>Müşteri Adı Soyadı</label>
+                    @Html.TextBoxFor(m => m.MUSTERI, new { @class = "form-control" , @required="true"})
+                    @Html.ValidationMessageFor(m => m.MUSTERI, "", new { @style = "color:red" })
+                    <br />
+                    <label>Satış Adedi</label>
+                    @Html.TextBoxFor(m => m.ADET, new { @class = "form-control" , @required="true"})
+                    @Html.ValidationMessageFor(m => m.ADET, "", new { @style = "color:red" })
+                    <br />
+                    <label>Satış Fiyatı</label>
+                    @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" , @required="true"})
+                    @Html.ValidationMessageFor(m => m.FIYAT, "", new { @style = "color:red" })
+                    <br />
+                    <button type="submit" class="btn-info">Satış İşlemini Yap</button>
+                    <button type="button" class="btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

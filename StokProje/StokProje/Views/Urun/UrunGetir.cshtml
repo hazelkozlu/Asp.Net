@@ -1,0 +1,42 @@
+﻿@model StokProje.Models.Entity.TBL_URUNLER
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.URUNID)
+        @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control", @readonly = "true" })
+
+        <br />
+
+        @Html.LabelFor(m => m.URUNAD)
+        @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.URUNAD, "", new { @style = "color:red" })
+        <br />
+
+        @Html.LabelFor(m => m.URUNKATEGORİ)
+        @Html.DropDownListFor(m => m.URUNKATEGORİ, (List<SelectListItem>)ViewBag.dgr, htmlAttributes: new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(m => m.FIYAT)
+        @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FIYAT, "", new { @style = "color:red" })
+        <br />
+
+        @Html.LabelFor(m => m.MARKA)
+        @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MARKA, "", new { @style = "color:red" })
+        <br />
+
+        @Html.LabelFor(m => m.STOK)
+        @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.STOK, "", new { @style = "color:red" })
+    </div>
+    <div class="form-group">
+        <button class="btn btn-warning">Ürün Güncelle</button>
+    </div>
+
+}
