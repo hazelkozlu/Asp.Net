@@ -1,0 +1,6 @@
+C:\Users\hazer\source\repos\Constructors\Constructors\bin\Debug\Constructors.exe.config
+C:\Users\hazer\source\repos\Constructors\Constructors\bin\Debug\Constructors.exe
+C:\Users\hazer\source\repos\Constructors\Constructors\bin\Debug\Constructors.pdb
+C:\Users\hazer\source\repos\Constructors\Constructors\obj\Debug\Constructors.csprojAssemblyReference.cache
+C:\Users\hazer\source\repos\Constructors\Constructors\obj\Debug\Constructors.exe
+C:\Users\hazer\source\repos\Constructors\Constructors\obj\Debug\Constructors.pdb
