@@ -1,0 +1,14 @@
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFrameworkExample.exe.config
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFrameworkExample.exe
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFrameworkExample.pdb
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFramework.dll
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFramework.xml
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.csprojAssemblyReference.cache
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.Form1.resources
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.Properties.Resources.resources
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.csproj.GenerateResource.cache
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.csproj.CopyComplete
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.exe
+C:\Users\hazer\source\repos\EntityFrameworkExample\EntityFrameworkExample\obj\Debug\EntityFrameworkExample.pdb
