@@ -1,0 +1,14 @@
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\NewMyProje.exe.config
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\NewMyProje.exe
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\NewMyProje.pdb
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\EntityFramework.dll
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\EntityFramework.xml
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.csprojAssemblyReference.cache
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.Form1.resources
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.Properties.Resources.resources
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.csproj.GenerateResource.cache
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.csproj.CopyComplete
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.exe
+C:\Users\hazer\source\repos\NewMyProje\NewMyProje\obj\Debug\NewMyProje.pdb
