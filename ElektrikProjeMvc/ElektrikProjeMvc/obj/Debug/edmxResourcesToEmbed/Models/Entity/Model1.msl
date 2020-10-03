@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ElektrikProjeDBModelStoreContainer" CdmEntityContainer="ElektrikProjeDBEntities1">
+    <EntitySetMapping Name="ilceler">
+      <EntityTypeMapping TypeName="ElektrikProjeDBModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iller">
+      <EntityTypeMapping TypeName="ElektrikProjeDBModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ElektrikProjeDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ADMIN">
+      <EntityTypeMapping TypeName="ElektrikProjeDBModel.TBL_ADMIN">
+        <MappingFragment StoreEntitySet="TBL_ADMIN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KULLANICI" ColumnName="KULLANICI" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ELEKTRIKPROJE">
+      <EntityTypeMapping TypeName="ElektrikProjeDBModel.TBL_ELEKTRIKPROJE">
+        <MappingFragment StoreEntitySet="TBL_ELEKTRIKPROJE">
+          <ScalarProperty Name="PROJEID" ColumnName="PROJEID" />
+          <ScalarProperty Name="PROJEAD" ColumnName="PROJEAD" />
+          <ScalarProperty Name="MEVKI" ColumnName="MEVKI" />
+          <ScalarProperty Name="ADA" ColumnName="ADA" />
+          <ScalarProperty Name="PARSEL" ColumnName="PARSEL" />
+          <ScalarProperty Name="ELEKTRIKPROJENUSHA" ColumnName="ELEKTRIKPROJENUSHA" />
+          <ScalarProperty Name="ELEKTRIKPROJEDURUM" ColumnName="ELEKTRIKPROJEDURUM" />
+          <ScalarProperty Name="ELEKTRIKPROJEONYTAR" ColumnName="ELEKTRIKPROJEONYTAR" />
+          <ScalarProperty Name="TELEKOMPROJENUSHA" ColumnName="TELEKOMPROJENUSHA" />
+          <ScalarProperty Name="TELEKOMPROJEDURUM" ColumnName="TELEKOMPROJEDURUM" />
+          <ScalarProperty Name="TELEKOMPROJEONYTAR" ColumnName="TELEKOMPROJEONYTAR" />
+          <ScalarProperty Name="KONTROLFORMU" ColumnName="KONTROLFORMU" />
+          <ScalarProperty Name="TEDASDOSYASI" ColumnName="TEDASDOSYASI" />
+          <ScalarProperty Name="ELEKTRIKCIAD" ColumnName="ELEKTRIKCIAD" />
+          <ScalarProperty Name="ILETISIM" ColumnName="ILETISIM" />
+          <ScalarProperty Name="ACIKLAMALAR" ColumnName="ACIKLAMALAR" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="ACIKLAMALAR2" ColumnName="ACIKLAMALAR2" />
+          <ScalarProperty Name="ACIKLAMALAR3" ColumnName="ACIKLAMALAR3" />
+          <ScalarProperty Name="SIRA" ColumnName="SIRA" />
+          <ScalarProperty Name="PROJEIL" ColumnName="PROJEIL" />
+          <ScalarProperty Name="TIKKONTROL" ColumnName="TIKKONTROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ProjeListesi" FunctionName="ElektrikProjeDBModel.Store.ProjeListesi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ElektrikProjeDBModel.ProjeListesi_Result">
+          <ScalarProperty Name="PROJEID" ColumnName="PROJEID" />
+          <ScalarProperty Name="PROJEAD" ColumnName="PROJEAD" />
+          <ScalarProperty Name="MEVKI" ColumnName="MEVKI" />
+          <ScalarProperty Name="ADA" ColumnName="ADA" />
+          <ScalarProperty Name="PARSEL" ColumnName="PARSEL" />
+          <ScalarProperty Name="ELEKTRIKPROJENUSHA" ColumnName="ELEKTRIKPROJENUSHA" />
+          <ScalarProperty Name="ELEKTRIKPROJEDURUM" ColumnName="ELEKTRIKPROJEDURUM" />
+          <ScalarProperty Name="ELEKTRIKPROJEONYTAR" ColumnName="ELEKTRIKPROJEONYTAR" />
+          <ScalarProperty Name="TELEKOMPROJENUSHA" ColumnName="TELEKOMPROJENUSHA" />
+          <ScalarProperty Name="TELEKOMPROJEDURUM" ColumnName="TELEKOMPROJEDURUM" />
+          <ScalarProperty Name="TELEKOMPROJEONYTAR" ColumnName="TELEKOMPROJEONYTAR" />
+          <ScalarProperty Name="KONTROLFORMU" ColumnName="KONTROLFORMU" />
+          <ScalarProperty Name="TEDASDOSYASI" ColumnName="TEDASDOSYASI" />
+          <ScalarProperty Name="ELEKTRIKCIAD" ColumnName="ELEKTRIKCIAD" />
+          <ScalarProperty Name="ILETISIM" ColumnName="ILETISIM" />
+          <ScalarProperty Name="ACIKLAMALAR" ColumnName="ACIKLAMALAR" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="ACIKLAMALAR2" ColumnName="ACIKLAMALAR2" />
+          <ScalarProperty Name="ACIKLAMALAR3" ColumnName="ACIKLAMALAR3" />
+          <ScalarProperty Name="SIRA" ColumnName="SIRA" />
+          <ScalarProperty Name="PROJEIL" ColumnName="PROJEIL" />
+          <ScalarProperty Name="TIKKONTROL" ColumnName="TIKKONTROL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ElektrikProjeDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ElektrikProjeDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ElektrikProjeDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ElektrikProjeDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ElektrikProjeDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ElektrikProjeDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ElektrikProjeDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ElektrikProjeDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ElektrikProjeDBModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="TBL_ELEKTRIKPROJEHAREKET">
+      <EntityTypeMapping TypeName="ElektrikProjeDBModel.TBL_ELEKTRIKPROJEHAREKET">
+        <MappingFragment StoreEntitySet="TBL_ELEKTRIKPROJEHAREKET">
+          <ScalarProperty Name="TIKKONTROL1" ColumnName="TIKKONTROL1" />
+          <ScalarProperty Name="PROJEIL1" ColumnName="PROJEIL1" />
+          <ScalarProperty Name="SIRA1" ColumnName="SIRA1" />
+          <ScalarProperty Name="ACIKLAMALAR31" ColumnName="ACIKLAMALAR31" />
+          <ScalarProperty Name="ACIKLAMALAR21" ColumnName="ACIKLAMALAR21" />
+          <ScalarProperty Name="FLAG1" ColumnName="FLAG1" />
+          <ScalarProperty Name="ACIKLAMALAR1" ColumnName="ACIKLAMALAR1" />
+          <ScalarProperty Name="ILETISIM1" ColumnName="ILETISIM1" />
+          <ScalarProperty Name="ELEKTRIKCIAD1" ColumnName="ELEKTRIKCIAD1" />
+          <ScalarProperty Name="TEDASDOSYASI1" ColumnName="TEDASDOSYASI1" />
+          <ScalarProperty Name="KONTROLFORMU1" ColumnName="KONTROLFORMU1" />
+          <ScalarProperty Name="TELEKOMPROJEONYTAR1" ColumnName="TELEKOMPROJEONYTAR1" />
+          <ScalarProperty Name="TELEKOMPROJEDURUM1" ColumnName="TELEKOMPROJEDURUM1" />
+          <ScalarProperty Name="TELEKOMPROJENUSHA1" ColumnName="TELEKOMPROJENUSHA1" />
+          <ScalarProperty Name="ELEKTRIKPROJEONYTAR1" ColumnName="ELEKTRIKPROJEONYTAR1" />
+          <ScalarProperty Name="ELEKTRIKPROJEDURUM1" ColumnName="ELEKTRIKPROJEDURUM1" />
+          <ScalarProperty Name="ELEKTRIKPROJENUSHA1" ColumnName="ELEKTRIKPROJENUSHA1" />
+          <ScalarProperty Name="PARSEL1" ColumnName="PARSEL1" />
+          <ScalarProperty Name="ADA1" ColumnName="ADA1" />
+          <ScalarProperty Name="MEVKI1" ColumnName="MEVKI1" />
+          <ScalarProperty Name="PROJEAD1" ColumnName="PROJEAD1" />
+          <ScalarProperty Name="PROJEID1" ColumnName="PROJEID1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElektrikProjeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="iller" Relationship="Self.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
+    <NavigationProperty Name="TBL_ELEKTRIKPROJE" Relationship="Self.FK_TBL_ELEKTRIKPROJE_ilceler" FromRole="ilceler" ToRole="TBL_ELEKTRIKPROJE" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ilceler" Relationship="Self.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KULLANICI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SIFRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_ELEKTRIKPROJE">
+    <Key>
+      <PropertyRef Name="PROJEID" />
+    </Key>
+    <Property Name="PROJEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROJEAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEVKI" Type="Int32" />
+    <Property Name="ADA" Type="Int32" />
+    <Property Name="PARSEL" Type="Int32" />
+    <Property Name="ELEKTRIKPROJENUSHA" Type="Int32" />
+    <Property Name="ELEKTRIKPROJEDURUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ELEKTRIKPROJEONYTAR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEKOMPROJENUSHA" Type="Int32" />
+    <Property Name="TELEKOMPROJEDURUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TELEKOMPROJEONYTAR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="KONTROLFORMU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEDASDOSYASI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ELEKTRIKCIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ILETISIM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMALAR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMALAR2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMALAR3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SIRA" Type="Int32" />
+    <Property Name="PROJEIL" Type="Int32" />
+    <Property Name="TIKKONTROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ilceler" Relationship="Self.FK_TBL_ELEKTRIKPROJE_ilceler" FromRole="TBL_ELEKTRIKPROJE" ToRole="ilceler" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="1" />
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ELEKTRIKPROJE_ilceler">
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="0..1" />
+    <End Role="TBL_ELEKTRIKPROJE" Type="Self.TBL_ELEKTRIKPROJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilceler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TBL_ELEKTRIKPROJE">
+        <PropertyRef Name="MEVKI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ElektrikProjeDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" />
+    <EntitySet Name="iller" EntityType="Self.iller" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" />
+    <EntitySet Name="TBL_ELEKTRIKPROJE" EntityType="Self.TBL_ELEKTRIKPROJE" />
+    <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ELEKTRIKPROJE_ilceler" Association="Self.FK_TBL_ELEKTRIKPROJE_ilceler">
+      <End Role="ilceler" EntitySet="ilceler" />
+      <End Role="TBL_ELEKTRIKPROJE" EntitySet="TBL_ELEKTRIKPROJE" />
+    </AssociationSet>
+    <FunctionImport Name="ProjeListesi" ReturnType="Collection(ElektrikProjeDBModel.ProjeListesi_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ElektrikProjeDBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ElektrikProjeDBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="TBL_ELEKTRIKPROJEHAREKET" EntityType="ElektrikProjeDBModel.TBL_ELEKTRIKPROJEHAREKET" />
+  </EntityContainer>
+  <ComplexType Name="ProjeListesi_Result">
+    <Property Type="Int32" Name="PROJEID" Nullable="false" />
+    <Property Type="String" Name="PROJEAD" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="MEVKI" Nullable="true" />
+    <Property Type="Int32" Name="ADA" Nullable="true" />
+    <Property Type="Int32" Name="PARSEL" Nullable="true" />
+    <Property Type="Int32" Name="ELEKTRIKPROJENUSHA" Nullable="true" />
+    <Property Type="String" Name="ELEKTRIKPROJEDURUM" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ELEKTRIKPROJEONYTAR" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="TELEKOMPROJENUSHA" Nullable="true" />
+    <Property Type="String" Name="TELEKOMPROJEDURUM" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TELEKOMPROJEONYTAR" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="KONTROLFORMU" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TEDASDOSYASI" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ELEKTRIKCIAD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ILETISIM" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ACIKLAMALAR" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FLAG" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ACIKLAMALAR2" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ACIKLAMALAR3" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="SIRA" Nullable="true" />
+    <Property Type="Int32" Name="PROJEIL" Nullable="true" />
+    <Property Type="String" Name="TIKKONTROL" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="TBL_ELEKTRIKPROJEHAREKET">
+    <Key>
+      <PropertyRef Name="PROJEID1" />
+    </Key>
+    <Property Name="PROJEID1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROJEAD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEVKI1" Type="Int32" />
+    <Property Name="ADA1" Type="Int32" />
+    <Property Name="PARSEL1" Type="Int32" />
+    <Property Name="ELEKTRIKPROJENUSHA1" Type="Int32" />
+    <Property Name="ELEKTRIKPROJEDURUM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ELEKTRIKPROJEONYTAR1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEKOMPROJENUSHA1" Type="Int32" />
+    <Property Name="TELEKOMPROJEDURUM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TELEKOMPROJEONYTAR1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="KONTROLFORMU1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEDASDOSYASI1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ELEKTRIKCIAD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ILETISIM1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMALAR1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FLAG1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMALAR21" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMALAR31" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SIRA1" Type="Int32" />
+    <Property Name="PROJEIL1" Type="Int32" />
+    <Property Name="TIKKONTROL1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

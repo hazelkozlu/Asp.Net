@@ -1,0 +1,111 @@
+﻿@model ElektrikProjeMvc.Models.Entity.TBL_ELEKTRIKPROJE
+@{
+    ViewBag.Title = "ProjeGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Default", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PROJEID)
+        @Html.TextBoxFor(m => m.PROJEID, new { @class = "form-control", @readonly = "true" })
+
+        <br />
+        <div>
+            <label>Proje Adı</label>
+            @Html.TextBoxFor(m => m.PROJEAD, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PROJEAD, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Proje İli</label>
+            @Html.DropDownListFor(m => m.PROJEIL, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PROJEIL, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Mevki</label>
+            @Html.DropDownListFor(m => m.MEVKI, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(m => m.MEVKI, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Ada</label>
+            @Html.TextBoxFor(m => m.ADA, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ADA, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Parsel </label>
+            @Html.TextBoxFor(m => m.PARSEL, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PARSEL, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Elektirk Proje Nüsha</label>
+            @Html.TextBoxFor(m => m.ELEKTRIKPROJENUSHA, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ELEKTRIKPROJENUSHA, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Elektrik Proje Durum</label>
+            @Html.TextBoxFor(m => m.ELEKTRIKPROJEDURUM, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ELEKTRIKPROJEDURUM, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Elektrik Proje Onay Tarihi</label>
+            @Html.TextBoxFor(m => m.ELEKTRIKPROJEONYTAR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ELEKTRIKPROJEONYTAR, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Telekom Proje Nüsha</label>
+            @Html.TextBoxFor(m => m.TELEKOMPROJENUSHA, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TELEKOMPROJENUSHA, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Telekom Proje Durum </label>
+            @Html.TextBoxFor(m => m.TELEKOMPROJEDURUM, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TELEKOMPROJEDURUM, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Telekom Proje Onay Tarihi</label>
+            @Html.TextBoxFor(m => m.TELEKOMPROJEONYTAR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TELEKOMPROJEONYTAR, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Kontrol Formu</label>
+            @Html.TextBoxFor(m => m.KONTROLFORMU, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.KONTROLFORMU, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Dosya Durumu</label>
+            @Html.TextBoxFor(m => m.TEDASDOSYASI, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TEDASDOSYASI, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Elektrikçi Adı soyadı</label>
+            @Html.TextBoxFor(m => m.ELEKTRIKCIAD, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ELEKTRIKCIAD, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Iletişim</label>
+            @Html.TextBoxFor(m => m.ILETISIM, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ILETISIM, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Açıklama 1</label>
+            @Html.TextBoxFor(m => m.ACIKLAMALAR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ACIKLAMALAR, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Açıklama 2</label>
+            @Html.TextBoxFor(m => m.ACIKLAMALAR2, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ACIKLAMALAR2, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Açıklama 2</label>
+            @Html.TextBoxFor(m => m.ACIKLAMALAR3, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ACIKLAMALAR3, "", new { @style = "color:red" })
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-warning">Proje Güncelle</button>
+    </div>
+}
+

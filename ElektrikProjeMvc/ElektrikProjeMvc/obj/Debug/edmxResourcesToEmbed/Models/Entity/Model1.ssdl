@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElektrikProjeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+    <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBL_ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KULLANICI" Type="varchar" MaxLength="20" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TBL_ELEKTRIKPROJE">
+    <Key>
+      <PropertyRef Name="PROJEID" />
+    </Key>
+    <Property Name="PROJEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROJEAD" Type="varchar" MaxLength="50" />
+    <Property Name="MEVKI" Type="int" />
+    <Property Name="ADA" Type="int" />
+    <Property Name="PARSEL" Type="int" />
+    <Property Name="ELEKTRIKPROJENUSHA" Type="int" />
+    <Property Name="ELEKTRIKPROJEDURUM" Type="varchar" MaxLength="50" />
+    <Property Name="ELEKTRIKPROJEONYTAR" Type="varchar" MaxLength="15" />
+    <Property Name="TELEKOMPROJENUSHA" Type="int" />
+    <Property Name="TELEKOMPROJEDURUM" Type="varchar" MaxLength="50" />
+    <Property Name="TELEKOMPROJEONYTAR" Type="varchar" MaxLength="15" />
+    <Property Name="KONTROLFORMU" Type="varchar" MaxLength="50" />
+    <Property Name="TEDASDOSYASI" Type="varchar" MaxLength="50" />
+    <Property Name="ELEKTRIKCIAD" Type="varchar" MaxLength="50" />
+    <Property Name="ILETISIM" Type="varchar" MaxLength="50" />
+    <Property Name="ACIKLAMALAR" Type="varchar" MaxLength="500" />
+    <Property Name="FLAG" Type="varchar" MaxLength="1" />
+    <Property Name="ACIKLAMALAR2" Type="varchar" MaxLength="500" />
+    <Property Name="ACIKLAMALAR3" Type="varchar" MaxLength="500" />
+    <Property Name="SIRA" Type="int" />
+    <Property Name="PROJEIL" Type="int" />
+    <Property Name="TIKKONTROL" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_ELEKTRIKPROJEHAREKET">
+    <Key>
+      <PropertyRef Name="PROJEID1" />
+    </Key>
+    <Property Name="PROJEID1" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROJEAD1" Type="varchar" MaxLength="50" />
+    <Property Name="MEVKI1" Type="int" />
+    <Property Name="ADA1" Type="int" />
+    <Property Name="PARSEL1" Type="int" />
+    <Property Name="ELEKTRIKPROJENUSHA1" Type="int" />
+    <Property Name="ELEKTRIKPROJEDURUM1" Type="varchar" MaxLength="50" />
+    <Property Name="ELEKTRIKPROJEONYTAR1" Type="varchar" MaxLength="15" />
+    <Property Name="TELEKOMPROJENUSHA1" Type="int" />
+    <Property Name="TELEKOMPROJEDURUM1" Type="varchar" MaxLength="50" />
+    <Property Name="TELEKOMPROJEONYTAR1" Type="varchar" MaxLength="15" />
+    <Property Name="KONTROLFORMU1" Type="varchar" MaxLength="50" />
+    <Property Name="TEDASDOSYASI1" Type="varchar" MaxLength="50" />
+    <Property Name="ELEKTRIKCIAD1" Type="varchar" MaxLength="50" />
+    <Property Name="ILETISIM1" Type="varchar" MaxLength="50" />
+    <Property Name="ACIKLAMALAR1" Type="varchar" MaxLength="500" />
+    <Property Name="FLAG1" Type="varchar" MaxLength="1" />
+    <Property Name="ACIKLAMALAR21" Type="varchar" MaxLength="500" />
+    <Property Name="ACIKLAMALAR31" Type="varchar" MaxLength="500" />
+    <Property Name="SIRA1" Type="int" />
+    <Property Name="PROJEIL1" Type="int" />
+    <Property Name="TIKKONTROL1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="1" />
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ELEKTRIKPROJE_ilceler">
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="0..1" />
+    <End Role="TBL_ELEKTRIKPROJE" Type="Self.TBL_ELEKTRIKPROJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilceler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TBL_ELEKTRIKPROJE">
+        <PropertyRef Name="MEVKI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="ProjeListesi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ElektrikProjeDBModelStoreContainer">
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ELEKTRIKPROJE" EntityType="Self.TBL_ELEKTRIKPROJE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ELEKTRIKPROJEHAREKET" EntityType="Self.TBL_ELEKTRIKPROJEHAREKET" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ELEKTRIKPROJE_ilceler" Association="Self.FK_TBL_ELEKTRIKPROJE_ilceler">
+      <End Role="ilceler" EntitySet="ilceler" />
+      <End Role="TBL_ELEKTRIKPROJE" EntitySet="TBL_ELEKTRIKPROJE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

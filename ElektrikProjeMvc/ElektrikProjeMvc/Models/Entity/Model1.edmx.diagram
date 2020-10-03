@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20dff589f11641de89ed0f2bb0ddee26" Name="Diagram1">
+        <EntityTypeShape EntityType="ElektrikProjeDBModel.ilceler" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElektrikProjeDBModel.iller" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElektrikProjeDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElektrikProjeDBModel.TBL_ADMIN" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElektrikProjeDBModel.TBL_ELEKTRIKPROJE" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="ElektrikProjeDBModel.FK_ilceler_iller" ManuallyRouted="false" />
+        <AssociationConnector Association="ElektrikProjeDBModel.FK_TBL_ELEKTRIKPROJE_ilceler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ElektrikProjeDBModel.TBL_ELEKTRIKPROJEHAREKET" Width="1.5" PointX="7.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
